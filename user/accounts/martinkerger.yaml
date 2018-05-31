@@ -1,0 +1,11 @@
+email: martin.kerger@googlemail.com
+fullname: 'Martin Kerger'
+title: Admin
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$rH59fdVSWMW/sIL/Q4hwxeznSOx7xwoUDpLIZoXkppwxeMkrnl5ZG

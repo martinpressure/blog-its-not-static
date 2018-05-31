@@ -1,0 +1,152 @@
+
+
+body * {
+	/*
+	border: 1px solid grey ! important;
+	*/
+}
+
+
+/* 0. Elements */
+
+.label {
+	background: transparent;
+	&.label-secondary {
+		background: transparent;
+		border: 1px solid $primary-color;
+	}
+}
+
+h1 {
+
+	@include breakpoint(md) {
+		font-size: 2rem;
+  	}
+}
+
+h2 {
+	a {
+		color: inherit;
+	}
+}
+
+/* 0. Navigation */
+
+#header .container {
+	padding-left: 0;
+	padding-right: 0;	
+
+	.dropmenu {
+		li:last-child {
+			a {
+				padding-right:0;
+			}
+		}
+	}
+}
+
+#header {
+	&.scrolled {
+		box-shadow: 0 -10px 30px 0px rgba(0, 0, 0, 0.2);
+	}
+} 
+
+/* 1. Hero */
+
+.hero h1 {
+	font-weight: 700;
+}
+
+.hero h2 {
+	color:inherit !important;
+}
+
+.hero p {
+	font-size: $font-size-lg;
+}
+
+.text-white {
+	p {
+		color: white
+	}
+}
+
+
+
+/* 2. Blog Edits */
+
+
+.blog-listing {
+
+	.a:focus, a:hover, a:active, a.active {
+		color: inherit;
+	}
+	.tagcloud {
+		.tags {
+			margin-left: -.4rem;
+	    	margin-right: -.4rem;
+	    	display: block;
+	    	margin-bottom: 50px;
+		}	
+	}
+	
+	.label {
+		border: none;
+		color:$gray-color-light;
+	}
+
+	.card {
+		box-shadow: none ! important;
+		margin-bottom: 20vh ! important;
+
+		.card-header, .card-body, .card-footer {
+		    padding-top: $layout-spacing-lg;
+		    padding-left: 0;
+		    padding-right: 0;
+		    padding-bottom: 0;
+		    text-align: left;
+
+		    &:last-child {
+		      padding-bottom: $layout-spacing-lg;
+		    }
+  		}
+
+		h2 {
+			
+		}
+
+	}
+
+	.card-subtitle {
+		span {
+			margin-right: 15px;
+			font-size: $font-size-sm;
+			color: grey;
+		}
+
+		.label {
+			background-color: white;
+			text-transform: none;
+			font-size: $font-size-sm;
+			color: grey;
+		}
+	}
+
+	.card-footer {
+		font-size: $font-size-sm;
+	}
+} 
+
+/* 3. Blog Item */
+
+.e-content { 
+	max-width: 616px;
+	margin: 0 auto;
+	padding-right: 0 ! important;
+} 
+
+
+
+/* 4. Media Queries */ 
+
+

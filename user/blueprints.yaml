@@ -1,0 +1,13 @@
+name: Its not static
+version: 2.0.0
+description: "A Blog on digital Life"
+icon: comments
+author:
+  name: MKE
+  email: devs@getgrav.org
+  url: http://getgrav.org
+homepage: https://github.com/getgrav/grav-skeleton-blog-site
+demo: http://demo.getgrav.org/blog-skeleton
+keywords: blog, quark, skeleton, pagination, breadcrumbs, taxonomy, archives, relatedpages
+bugs: https://github.com/getgrav/grav-skeleton-blog-site/issues
+license: MIT

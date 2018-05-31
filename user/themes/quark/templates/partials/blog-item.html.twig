@@ -1,0 +1,61 @@
+<div class="content-item h-entry">
+
+{% if not hero_image_name %}
+    <div class="content-title text-center">
+        {% include 'partials/blog/title.html.twig' with {title_level: 'h2'} %}
+        {% if page.header.subtitle %}
+        <h3 >{{ page.header.subtitle }}</h3>
+        {% endif %}
+        {% include 'partials/blog/date.html.twig' %}
+        {% include 'partials/blog/taxonomy.html.twig' %}
+    </div>
+{% endif %}
+
+    <div class="e-content">
+        {{ page.content }}
+    </div>
+
+    <div class="author">
+      <div class="author-image" style="background-image: url({{ base_url }}{{site.author.image}})"></div>
+      <h4>{{ site.author.name }}</h4>
+      <p class="bio">{{site.author.bio}}</p>
+      <hr>
+      <p class="published">Published <time datetime="{{ page.date | date(site.date_short) }}">{{ page.date | date(site.date_short) }}</time></p> 
+    </div>
+
+    {% if page.header.continue_link is sameas(true) and config.plugins.comments.enabled %}
+        {% include 'partials/comments.html.twig' %}
+    {% endif %}
+
+
+</div>
+
+<p class="prev-next text-center">
+
+
+    {% if not page.isLast %}
+            <a class="btn" href="{{ page.prevSibling.url }}"><i class="fa fa-angle-left"></i> {{ 'BLOG.ITEM.PREV_POST'|t }}</a>
+    {% endif %}
+
+    {% if not page.isFirst %}
+        <a class="btn" href="{{ page.nextSibling.url }}">{{ 'BLOG.ITEM.NEXT_POST'|t }} <i class="fa fa-angle-right"></i></a>
+    {% endif %}
+</p>
+
+<div>
+
+    {% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
+    <div class="sidebar-content">
+        <h4>{{ 'SIDEBAR.RELATED_POSTS.HEADLINE'|t }}</h4>
+        {% include 'partials/relatedpages.html.twig' %}
+    </div>
+    {% endif %}
+        
+    {% if config.plugins.taxonomylist.enabled %}
+    <div class="sidebar-content">
+        <h4>{{ 'SIDEBAR.POPULAR_TAGS.HEADLINE'|t }}</h4>
+        {% include 'partials/taxonomylist.html.twig' with {'base_url':new_base_url, 'taxonomy':'tag'} %}
+    </div>
+    {% endif %}
+
+</div>

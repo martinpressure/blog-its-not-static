@@ -1,0 +1,32 @@
+<div class="card">
+    
+    
+    <div class="card-header">
+        <div class="card-subtitle text-gray">
+            {% include 'partials/blog/date.html.twig' %}            
+            {% include 'partials/blog/taxonomy.html.twig' %}
+        </div>
+        <div class="card-title">
+        {% include 'partials/blog/title.html.twig' with {title_level: 'h2'} %}
+        </div>
+    </div>
+    {% set image = page.media.images|first %}
+    {% if image %}
+    <div class="card-image">
+        <a href="{{ page.url }}">{{ image.cropZoom(800,600).html }}</a>
+    </div>
+    {% endif %}
+
+    <div class="card-body">
+        {% if page.summary != page.content %}
+            {{ page.summary }}
+        {% else %}
+            {{ page.content }}
+        {% endif %}
+    </div>
+    <div class="card-footer">
+        von
+        {% include 'partials/blog/author.html.twig' %}
+    </div>
+</div>
+
